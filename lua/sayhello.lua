@@ -6,9 +6,9 @@ return {
     }, function(name)
       buffer.close_buffer("result")
       buffer.open_buffer()
-      current_buf = vim.api.nvim_get_current_buf()
+      current_buf = vim.fn.bufnr("%")
       vim.api.nvim_buf_set_lines(current_buf, 0, -1, true, { "Hello " .. name })
-      vim.opt.buflisted = false
+      vim.bo.buflisted = false
     end)
   end
 }
