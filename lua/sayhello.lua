@@ -8,6 +8,7 @@ return {
       buffer.open_buffer()
       current_buf = vim.api.nvim_get_current_buf()
       vim.api.nvim_buf_set_lines(current_buf, 0, -1, true, { "Hello " .. name })
+      vim.opt.buflisted = false
     end)
   end
 }
