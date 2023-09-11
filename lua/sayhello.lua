@@ -9,6 +9,8 @@ return {
       current_buf = vim.fn.bufnr("%")
       vim.api.nvim_buf_set_lines(current_buf, 0, -1, true, { "Hello " .. name })
       vim.bo.buflisted = false
+      vim.cmd("file result")
+      vim.cmd("norm G")
     end)
   end
 }
